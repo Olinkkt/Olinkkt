@@ -2,6 +2,6 @@
 - 👀 I’m interested in IT, fitness, motorsport, music and fashion.
 - 🌱 I’m currently learning AI tools
 - 💞️ I’m looking to collaborate on cool programming projects.
-- 📫 How to reach me: seidl.oliver@icloud.com
+- 📫 How to reach me: oliver@seidltech.cz
 - 😄 Pronouns: he/him
 - ⚡ Fun fact: I’m also a karting enthusiast and gym addict!
