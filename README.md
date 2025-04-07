@@ -5,4 +5,3 @@
 - 📫 How to reach me: oliver@seidltech.cz
 - 😄 Pronouns: he/him
 - ⚡ Fun fact: I’m also a karting enthusiast and gym addict!
-<iframe src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=4510057" style='border:none;'></iframe>
