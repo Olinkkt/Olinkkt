@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="206" height="52" viewBox="0 0 206 52" fill="none" role="img">
+<style>
+.mono{font-family:ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', 'DejaVu Sans Mono', monospace;}
+</style>
+<rect x=".5" y=".5" width="205" height="51" rx="12" fill="#0F1626" stroke="#1F2A3D"/>
+<circle cx="28" cy="26" r="9" stroke="#F5C451" stroke-width="2"/><ellipse cx="28" cy="26" rx="4" ry="9" stroke="#F5C451" stroke-width="1.6"/><line x1="19" y1="26" x2="37" y2="26" stroke="#F5C451" stroke-width="1.6"/>
+<text class="mono" x="50" y="30.5" font-size="13.5" fill="#E6EAF2">oliverseidl.dev</text>
+</svg>

@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="330" viewBox="0 0 900 330" fill="none" role="img">
+<style>
+.mono{font-family:ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', 'DejaVu Sans Mono', monospace;} .fade{opacity:0;animation:f .4s ease-out forwards;} @keyframes f{to{opacity:1}}
+</style>
+<rect x=".5" y=".5" width="899" height="329" rx="16" fill="#FFFFFF" stroke="#DCE2EC"/>
+<g class="fade" style="animation-delay:0.10s">
+<text class="mono" x="28" y="49" font-size="13" fill="#5B6678" xml:space="preserve"><tspan fill="#B7791F">~/</tspan>lang</text>
+<rect x="150.0" y="30" width="119.3" height="30" rx="8" fill="#F1F4F9" stroke="#DCE2EC"/><circle cx="165.0" cy="45" r="4.5" fill="#3178C6"/><text class="mono" x="177.0" y="49.5" font-size="13" fill="#0F172A">TypeScript</text>
+<rect x="279.3" y="30" width="119.3" height="30" rx="8" fill="#F1F4F9" stroke="#DCE2EC"/><circle cx="294.3" cy="45" r="4.5" fill="#F7DF1E"/><text class="mono" x="306.3" y="49.5" font-size="13" fill="#0F172A">JavaScript</text>
+<rect x="408.6" y="30" width="71.7" height="30" rx="8" fill="#F1F4F9" stroke="#DCE2EC"/><circle cx="423.6" cy="45" r="4.5" fill="#E34F26"/><text class="mono" x="435.6" y="49.5" font-size="13" fill="#0F172A">HTML</text>
+<rect x="490.3" y="30" width="63.8" height="30" rx="8" fill="#F1F4F9" stroke="#DCE2EC"/><circle cx="505.3" cy="45" r="4.5" fill="#663399"/><text class="mono" x="517.3" y="49.5" font-size="13" fill="#0F172A">CSS</text>
+</g>
+<line x1="28" y1="68" x2="872" y2="68" stroke="#E8ECF3" stroke-dasharray="2 5"/>
+<g class="fade" style="animation-delay:0.22s">
+<text class="mono" x="28" y="95" font-size="13" fill="#5B6678" xml:space="preserve"><tspan fill="#B7791F">~/</tspan>frontend</text>
+<rect x="150.0" y="76" width="79.7" height="30" rx="8" fill="#F1F4F9" stroke="#DCE2EC"/><circle cx="165.0" cy="91" r="4.5" fill="#61DAFB"/><text class="mono" x="177.0" y="95.5" font-size="13" fill="#0F172A">React</text>
+<rect x="239.7" y="76" width="95.5" height="30" rx="8" fill="#F1F4F9" stroke="#DCE2EC"/><circle cx="254.7" cy="91" r="4.5" fill="#0F172A"/><text class="mono" x="266.6" y="95.5" font-size="13" fill="#0F172A">Next.js</text>
+<rect x="345.2" y="76" width="71.7" height="30" rx="8" fill="#F1F4F9" stroke="#DCE2EC"/><circle cx="360.2" cy="91" r="4.5" fill="#9467FF"/><text class="mono" x="372.2" y="95.5" font-size="13" fill="#0F172A">Vite</text>
+<rect x="426.9" y="76" width="103.4" height="30" rx="8" fill="#F1F4F9" stroke="#DCE2EC"/><circle cx="441.9" cy="91" r="4.5" fill="#38BDF8"/><text class="mono" x="453.9" y="95.5" font-size="13" fill="#0F172A">Tailwind</text>
+<rect x="540.3" y="76" width="111.4" height="30" rx="8" fill="#F1F4F9" stroke="#DCE2EC"/><circle cx="555.3" cy="91" r="4.5" fill="#0F172A"/><text class="mono" x="567.3" y="95.5" font-size="13" fill="#0F172A">shadcn/ui</text>
+<rect x="661.7" y="76" width="143.1" height="30" rx="8" fill="#F1F4F9" stroke="#DCE2EC"/><circle cx="676.7" cy="91" r="4.5" fill="#E94BD8"/><text class="mono" x="688.7" y="95.5" font-size="13" fill="#0F172A">Framer Motion</text>
+</g>
+<line x1="28" y1="114" x2="872" y2="114" stroke="#E8ECF3" stroke-dasharray="2 5"/>
+<g class="fade" style="animation-delay:0.34s">
+<text class="mono" x="28" y="141" font-size="13" fill="#5B6678" xml:space="preserve"><tspan fill="#B7791F">~/</tspan>backend</text>
+<rect x="150.0" y="122" width="95.5" height="30" rx="8" fill="#F1F4F9" stroke="#DCE2EC"/><circle cx="165.0" cy="137" r="4.5" fill="#5FA04E"/><text class="mono" x="177.0" y="141.5" font-size="13" fill="#0F172A">Node.js</text>
+<rect x="255.5" y="122" width="111.4" height="30" rx="8" fill="#F1F4F9" stroke="#DCE2EC"/><circle cx="270.5" cy="137" r="4.5" fill="#0F172A"/><text class="mono" x="282.5" y="141.5" font-size="13" fill="#0F172A">Socket.io</text>
+<rect x="376.9" y="122" width="103.4" height="30" rx="8" fill="#F1F4F9" stroke="#DCE2EC"/><circle cx="391.9" cy="137" r="4.5" fill="#3ECF8E"/><text class="mono" x="403.9" y="141.5" font-size="13" fill="#0F172A">Supabase</text>
+<rect x="490.3" y="122" width="63.8" height="30" rx="8" fill="#F1F4F9" stroke="#DCE2EC"/><circle cx="505.3" cy="137" r="4.5" fill="#3068B7"/><text class="mono" x="517.3" y="141.5" font-size="13" fill="#0F172A">Zod</text>
+<rect x="564.1" y="122" width="87.6" height="30" rx="8" fill="#F1F4F9" stroke="#DCE2EC"/><circle cx="579.1" cy="137" r="4.5" fill="#0F172A"/><text class="mono" x="591.1" y="141.5" font-size="13" fill="#0F172A">Kysely</text>
+</g>
+<line x1="28" y1="160" x2="872" y2="160" stroke="#E8ECF3" stroke-dasharray="2 5"/>
+<g class="fade" style="animation-delay:0.46s">
+<text class="mono" x="28" y="187" font-size="13" fill="#5B6678" xml:space="preserve"><tspan fill="#B7791F">~/</tspan>data</text>
+<rect x="150.0" y="168" width="119.3" height="30" rx="8" fill="#F1F4F9" stroke="#DCE2EC"/><circle cx="165.0" cy="183" r="4.5" fill="#4169E1"/><text class="mono" x="177.0" y="187.5" font-size="13" fill="#0F172A">PostgreSQL</text>
+<rect x="279.3" y="168" width="158.9" height="30" rx="8" fill="#F1F4F9" stroke="#DCE2EC"/><circle cx="294.3" cy="183" r="4.5" fill="#4FA3D9"/><text class="mono" x="306.3" y="187.5" font-size="13" fill="#0F172A">SQLite / LibSQL</text>
+</g>
+<line x1="28" y1="206" x2="872" y2="206" stroke="#E8ECF3" stroke-dasharray="2 5"/>
+<g class="fade" style="animation-delay:0.58s">
+<text class="mono" x="28" y="233" font-size="13" fill="#5B6678" xml:space="preserve"><tspan fill="#B7791F">~/</tspan>ship</text>
+<rect x="150.0" y="214" width="87.6" height="30" rx="8" fill="#F1F4F9" stroke="#DCE2EC"/><circle cx="165.0" cy="229" r="4.5" fill="#0F172A"/><text class="mono" x="177.0" y="233.5" font-size="13" fill="#0F172A">Vercel</text>
+<rect x="247.6" y="214" width="87.6" height="30" rx="8" fill="#F1F4F9" stroke="#DCE2EC"/><circle cx="262.6" cy="229" r="4.5" fill="#2496ED"/><text class="mono" x="274.6" y="233.5" font-size="13" fill="#0F172A">Docker</text>
+<rect x="345.2" y="214" width="63.8" height="30" rx="8" fill="#F1F4F9" stroke="#DCE2EC"/><circle cx="360.2" cy="229" r="4.5" fill="#F05032"/><text class="mono" x="372.2" y="233.5" font-size="13" fill="#0F172A">Git</text>
+<rect x="418.9" y="214" width="119.3" height="30" rx="8" fill="#F1F4F9" stroke="#DCE2EC"/><circle cx="433.9" cy="229" r="4.5" fill="#2EAD33"/><text class="mono" x="445.9" y="233.5" font-size="13" fill="#0F172A">Playwright</text>
+</g>
+<line x1="28" y1="252" x2="872" y2="252" stroke="#E8ECF3" stroke-dasharray="2 5"/>
+<g class="fade" style="animation-delay:0.70s">
+<text class="mono" x="28" y="279" font-size="13" fill="#5B6678" xml:space="preserve"><tspan fill="#B7791F">~/</tspan>desk</text>
+<rect x="150.0" y="260" width="119.3" height="30" rx="8" fill="#F1F4F9" stroke="#DCE2EC"/><circle cx="165.0" cy="275" r="4.5" fill="#1793D1"/><text class="mono" x="177.0" y="279.5" font-size="13" fill="#0F172A">Arch Linux</text>
+<rect x="279.3" y="260" width="103.4" height="30" rx="8" fill="#F1F4F9" stroke="#DCE2EC"/><circle cx="294.3" cy="275" r="4.5" fill="#58E1FF"/><text class="mono" x="306.3" y="279.5" font-size="13" fill="#0F172A">Hyprland</text>
+<rect x="392.7" y="260" width="79.7" height="30" rx="8" fill="#F1F4F9" stroke="#DCE2EC"/><circle cx="407.7" cy="275" r="4.5" fill="#F24E1E"/><text class="mono" x="419.7" y="279.5" font-size="13" fill="#0F172A">Figma</text>
+</g>
+</svg>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="64" viewBox="0 0 900 64" fill="none" role="img">
+<style>
+.mono{font-family:ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', 'DejaVu Sans Mono', monospace;} .sans{font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;}
+</style>
+<text class="mono" x="2" y="20" font-size="13" xml:space="preserve"><tspan fill="#F5C451">$</tspan><tspan fill="#8B95A7"> ping oliver</tspan></text>
+<text class="sans" x="0" y="52" font-size="27" font-weight="800" letter-spacing="-.5" fill="#E6EAF2">Contact<tspan fill="#F5C451">.</tspan></text>
+<text class="mono" x="900" y="51" text-anchor="end" font-size="13" fill="#8B95A7">// let's build something</text>
+<line x1="0" y1="63" x2="900" y2="63" stroke="#1F2A3D"/>
+<line x1="0" y1="63" x2="56" y2="63" stroke="#F5C451" stroke-width="2"/>
+</svg>

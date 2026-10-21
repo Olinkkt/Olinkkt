@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="236" viewBox="0 0 440 236" fill="none" role="img">
+<style>
+
+.mono{font-family:ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', 'DejaVu Sans Mono', monospace;} .sans{font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;}
+.sheen{animation:sheen 4.5s ease-in-out infinite;}
+@keyframes sheen{0%{transform:translateX(-160px)}60%,100%{transform:translateX(600px)}}
+.pulse{animation:pulse 2s ease-in-out infinite;}
+@keyframes pulse{50%{opacity:.25}}
+
+</style>
+<defs>
+<linearGradient id="cg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F6F8FB"/><stop offset="1" stop-color="#FFFFFF"/></linearGradient>
+<radialGradient id="cgl" cx="0" cy="0" r="0.9"><stop offset="0" stop-color="#B7791F" stop-opacity="0.06"/><stop offset="1" stop-color="#B7791F" stop-opacity="0"/></radialGradient>
+<linearGradient id="sh" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#B7791F" stop-opacity="0"/><stop offset=".5" stop-color="#B7791F"/><stop offset="1" stop-color="#B7791F" stop-opacity="0"/></linearGradient>
+<clipPath id="cc"><rect x="1" y="1" width="438" height="234" rx="15"/></clipPath>
+</defs>
+<g clip-path="url(#cc)"><rect width="440" height="236" fill="url(#cg)"/><rect width="440" height="236" fill="url(#cgl)"/><rect class="sheen" x="0" y="1" width="140" height="2" fill="url(#sh)"/></g>
+<rect x=".5" y=".5" width="439" height="235" rx="15.5" stroke="#DCE2EC"/>
+<rect x="24" y="24" width="44" height="44" rx="11" fill="#F1F4F9" stroke="#DCE2EC"/>
+<path d="M54 36 H38 L47 46 L38 56 H54" stroke="#B7791F" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+<text class="sans" x="82" y="44" font-size="21" font-weight="800" letter-spacing="-.3" fill="#0F172A">Flexnote</text>
+<text class="mono" x="82" y="64" font-size="12" fill="#5B6678">Olinkkt/flexnote.xyz</text>
+<rect x="360.4" y="26" width="55.6" height="22" rx="11" fill="#F1F4F9" stroke="#DCE2EC"/><circle class="pulse" cx="372.4" cy="37" r="3.5" fill="#1F9D55"/><text class="mono" x="381.4" y="40.6" font-size="10.5" font-weight="700" letter-spacing=".3" fill="#1F9D55">LIVE</text>
+<text class="sans" x="24" y="101" font-size="14" fill="#5B6678">Messy handwritten notes in, clean Markdown and</text>
+<text class="sans" x="24" y="122" font-size="14" fill="#5B6678">KaTeX math out. Flashcards, quizzes and</text>
+<text class="sans" x="24" y="143" font-size="14" fill="#5B6678">leaderboards to flex on.</text>
+<rect x="24.0" y="186" width="55.1" height="26" rx="7" fill="#F1F4F9" stroke="#DCE2EC"/><text class="mono" x="34.0" y="203.2" font-size="11.5" fill="#0F172A">React</text>
+<rect x="87.1" y="186" width="48.1" height="26" rx="7" fill="#F1F4F9" stroke="#DCE2EC"/><text class="mono" x="97.1" y="203.2" font-size="11.5" fill="#0F172A">Vite</text>
+<rect x="143.1" y="186" width="76.1" height="26" rx="7" fill="#F1F4F9" stroke="#DCE2EC"/><text class="mono" x="153.1" y="203.2" font-size="11.5" fill="#0F172A">Supabase</text>
+<rect x="227.3" y="186" width="62.1" height="26" rx="7" fill="#F1F4F9" stroke="#DCE2EC"/><text class="mono" x="237.3" y="203.2" font-size="11.5" fill="#0F172A">Gemini</text>
+<text class="mono" x="416" y="203.2" text-anchor="end" font-size="15" fill="#B7791F">-&gt;</text>
+</svg>

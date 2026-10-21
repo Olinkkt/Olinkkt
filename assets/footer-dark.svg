@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="70" viewBox="0 0 900 70" fill="none" role="img">
+<style>
+.mono{font-family:ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', 'DejaVu Sans Mono', monospace;} .blink{animation:b 1s steps(1,end) infinite;} @keyframes b{50%{opacity:0}}
+</style>
+<line x1="0" y1="1" x2="900" y2="1" stroke="#1F2A3D"/>
+<text class="mono" x="253.6" y="44" font-size="14" xml:space="preserve"><tspan fill="#F5C451" font-weight="700">oliver@arch</tspan><tspan fill="#7AA2F7"> ~ </tspan><tspan fill="#8B95A7">$ </tspan><tspan fill="#E6EAF2">exit</tspan><tspan fill="#4B5568">  # thanks for stopping by</tspan></text>
+<rect class="blink" x="652.4" y="31" width="8" height="17" fill="#F5C451"/>
+</svg>

@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="660" viewBox="0 0 900 660" fill="none" role="img">
+<style>
+
+.mono{font-family:ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', 'DejaVu Sans Mono', monospace;} .sans{font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;}
+.fade{opacity:0;animation:fadeIn .45s ease-out forwards;}
+@keyframes fadeIn{to{opacity:1}}
+.type{animation:type .9s steps(8,end) .35s forwards;}
+@keyframes type{to{transform:translateX(78px)}}
+.blink{animation:blink 1s steps(1,end) infinite;}
+@keyframes blink{50%{opacity:0}}
+.pulse{animation:pulse 2.4s ease-in-out infinite;transform-origin:center;transform-box:fill-box;}
+@keyframes pulse{0%,100%{opacity:.35;transform:scale(1)}50%{opacity:1;transform:scale(1.35)}}
+.glow{animation:glow 6s ease-in-out infinite;}
+@keyframes glow{0%,100%{opacity:.55}50%{opacity:1}}
+.sheen{animation:sheen 5s linear infinite;}
+@keyframes sheen{0%{transform:translateX(-300px)}100%{transform:translateX(1100px)}}
+
+</style>
+<defs>
+  <linearGradient id="bgG" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0B0F19"/><stop offset="1" stop-color="#0F1626"/></linearGradient>
+  <radialGradient id="glowG" cx="0.85" cy="0.05" r="0.6"><stop offset="0" stop-color="#F5C451" stop-opacity="0.18"/><stop offset="1" stop-color="#F5C451" stop-opacity="0"/></radialGradient>
+  <radialGradient id="glowB" cx="0.05" cy="1" r="0.6"><stop offset="0" stop-color="#7AA2F7" stop-opacity="0.13"/><stop offset="1" stop-color="#7AA2F7" stop-opacity="0"/></radialGradient>
+  <linearGradient id="nameG" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#F5C451"/><stop offset="1" stop-color="#E09F2E"/></linearGradient>
+  <linearGradient id="sheenG" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#F5C451" stop-opacity="0"/><stop offset=".5" stop-color="#F5C451" stop-opacity=".9"/><stop offset="1" stop-color="#F5C451" stop-opacity="0"/></linearGradient>
+  <pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="1.5" cy="1.5" r="1.1" fill="#1A2234"/></pattern>
+  <clipPath id="outer"><rect width="900" height="660" rx="20"/></clipPath>
+</defs>
+<g clip-path="url(#outer)">
+<rect width="900" height="660" fill="url(#bgG)"/>
+<rect width="900" height="660" fill="url(#dots)"/>
+<rect class="glow" width="900" height="660" fill="url(#glowG)"/>
+<rect width="900" height="660" fill="url(#glowB)"/>
+<rect class="sheen" x="0" y="0" width="260" height="2" fill="url(#sheenG)"/>
+</g>
+<rect x=".5" y=".5" width="899" height="659" rx="19.5" stroke="#1F2A3D"/>
+<text class="mono fade" style="animation-delay:.05s" x="40" y="58" font-size="13" letter-spacing="3" fill="#8B95A7">HI, I'M</text>
+<text class="sans fade" style="animation-delay:.1s" x="38" y="112" font-size="54" font-weight="800" letter-spacing="-1.5" fill="url(#nameG)">Oliver Seidl</text>
+<text class="mono fade" style="animation-delay:.2s" x="40" y="144" font-size="15" fill="#E6EAF2">freelance web developer <tspan fill="#4B5568">·</tspan> student @ SSPŠ <tspan fill="#4B5568">·</tspan> Prague, CZ</text>
+<g class="fade" style="animation-delay:.3s"><rect x="667.5" y="40" width="196.5" height="30" rx="15" fill="#131A29" stroke="#1F2A3D"/><circle class="pulse" cx="685.5" cy="55" r="4.5" fill="#7BD88F"/><text class="mono" x="699.5" y="59.5" font-size="12.5" fill="#E6EAF2">open to web projects</text></g>
+<text class="mono fade" style="animation-delay:.35s" x="864" y="96" text-anchor="end" font-size="12.5" fill="#8B95A7">oliverseidl.dev</text>
+<rect x="32" y="168" width="836" height="462" rx="14" fill="#0D1320" stroke="#1F2A3D"/>
+<path d="M32 182 a14 14 0 0 1 14 -14 h808 a14 14 0 0 1 14 14 v24 h-836 z" fill="#141B2B"/>
+<line x1="32" y1="206" x2="868" y2="206" stroke="#1F2A3D"/>
+<circle cx="54" cy="187" r="6" fill="#FF5F57"/>
+<circle cx="74" cy="187" r="6" fill="#FEBC2E"/>
+<circle cx="94" cy="187" r="6" fill="#28C840"/>
+<text class="mono" x="450.0" y="191.5" text-anchor="middle" font-size="12.5" fill="#8B95A7">oliver@arch: ~</text>
+<text class="mono" x="58" y="240" font-size="15" xml:space="preserve"><tspan fill="#F5C451" font-weight="700">oliver@arch</tspan><tspan fill="#7AA2F7"> ~ </tspan><tspan fill="#8B95A7">$ </tspan><tspan fill="#E6EAF2">neofetch</tspan></text>
+<rect class="type" x="203.4" y="225" width="82" height="21" fill="#0D1320"/>
+<g class="fade" style="animation-delay:1.3s">
+<text class="mono" x="58" y="280.0" font-size="12.5" font-weight="700" fill="#F5C451" xml:space="preserve">                   -`</text>
+<text class="mono" x="58" y="295.2" font-size="12.5" font-weight="700" fill="#F5C451" xml:space="preserve">                  .o+`</text>
+<text class="mono" x="58" y="310.4" font-size="12.5" font-weight="700" fill="#F5C451" xml:space="preserve">                 `ooo/</text>
+<text class="mono" x="58" y="325.6" font-size="12.5" font-weight="700" fill="#F5C451" xml:space="preserve">                `+oooo:</text>
+<text class="mono" x="58" y="340.8" font-size="12.5" font-weight="700" fill="#F5C451" xml:space="preserve">               `+oooooo:</text>
+<text class="mono" x="58" y="356.0" font-size="12.5" font-weight="700" fill="#F5C451" xml:space="preserve">               -+oooooo+:</text>
+<text class="mono" x="58" y="371.2" font-size="12.5" font-weight="700" fill="#F5C451" xml:space="preserve">             `/:-:++oooo+:</text>
+<text class="mono" x="58" y="386.4" font-size="12.5" font-weight="700" fill="#F5C451" xml:space="preserve">            `/++++/+++++++:</text>
+<text class="mono" x="58" y="401.6" font-size="12.5" font-weight="700" fill="#F5C451" xml:space="preserve">           `/++++++++++++++:</text>
+<text class="mono" x="58" y="416.8" font-size="12.5" font-weight="700" fill="#F5C451" xml:space="preserve">          `/+++ooooooooooooo/`</text>
+<text class="mono" x="58" y="432.0" font-size="12.5" font-weight="700" fill="#E09F2E" xml:space="preserve">         ./ooosssso++osssssso+`</text>
+<text class="mono" x="58" y="447.2" font-size="12.5" font-weight="700" fill="#E09F2E" xml:space="preserve">        .oossssso-````/ossssss+`</text>
+<text class="mono" x="58" y="462.4" font-size="12.5" font-weight="700" fill="#E09F2E" xml:space="preserve">       -osssssso.      :ssssssso.</text>
+<text class="mono" x="58" y="477.6" font-size="12.5" font-weight="700" fill="#E09F2E" xml:space="preserve">      :osssssss/        osssso+++.</text>
+<text class="mono" x="58" y="492.8" font-size="12.5" font-weight="700" fill="#E09F2E" xml:space="preserve">     /ossssssss/        +ssssooo/-</text>
+<text class="mono" x="58" y="508.0" font-size="12.5" font-weight="700" fill="#E09F2E" xml:space="preserve">   `/ossssso+/:-        -:/+osssso+-</text>
+<text class="mono" x="58" y="523.2" font-size="12.5" font-weight="700" fill="#E09F2E" xml:space="preserve">  `+sso+:-`                 `.-/+oso:</text>
+<text class="mono" x="58" y="538.4" font-size="12.5" font-weight="700" fill="#E09F2E" xml:space="preserve"> `++:.                           `-/+/</text>
+<text class="mono" x="58" y="553.6" font-size="12.5" font-weight="700" fill="#E09F2E" xml:space="preserve"> .`                                 `/</text>
+</g>
+<text class="mono fade" style="animation-delay:1.45s" x="393.8" y="280.0" font-size="14.5" font-weight="700" fill="#F5C451">oliver<tspan fill="#8B95A7">@</tspan>arch</text>
+<text class="mono fade" style="animation-delay:1.45s" x="393.8" y="301.5" font-size="14.5" fill="#4B5568">-----------</text>
+<text class="mono fade" style="animation-delay:1.54s" x="393.8" y="323.0" font-size="14.5" xml:space="preserve"><tspan fill="#F5C451" font-weight="700">OS</tspan><tspan fill="#8B95A7">: </tspan><tspan fill="#E6EAF2">Arch Linux x86_64</tspan></text>
+<text class="mono fade" style="animation-delay:1.63s" x="393.8" y="344.5" font-size="14.5" xml:space="preserve"><tspan fill="#F5C451" font-weight="700">WM</tspan><tspan fill="#8B95A7">: </tspan><tspan fill="#E6EAF2">Hyprland (macOS-style rice)</tspan></text>
+<text class="mono fade" style="animation-delay:1.72s" x="393.8" y="366.0" font-size="14.5" xml:space="preserve"><tspan fill="#F5C451" font-weight="700">Host</tspan><tspan fill="#8B95A7">: </tspan><tspan fill="#E6EAF2">Prague, Czechia</tspan></text>
+<text class="mono fade" style="animation-delay:1.81s" x="393.8" y="387.5" font-size="14.5" xml:space="preserve"><tspan fill="#F5C451" font-weight="700">Role</tspan><tspan fill="#8B95A7">: </tspan><tspan fill="#E6EAF2">Freelance web developer</tspan></text>
+<text class="mono fade" style="animation-delay:1.90s" x="393.8" y="409.0" font-size="14.5" xml:space="preserve"><tspan fill="#F5C451" font-weight="700">School</tspan><tspan fill="#8B95A7">: </tspan><tspan fill="#E6EAF2">SSPŠ, IT student</tspan></text>
+<text class="mono fade" style="animation-delay:1.99s" x="393.8" y="430.5" font-size="14.5" xml:space="preserve"><tspan fill="#F5C451" font-weight="700">Lang</tspan><tspan fill="#8B95A7">: </tspan><tspan fill="#E6EAF2">TypeScript, JavaScript</tspan></text>
+<text class="mono fade" style="animation-delay:2.08s" x="393.8" y="452.0" font-size="14.5" xml:space="preserve"><tspan fill="#F5C451" font-weight="700">Stack</tspan><tspan fill="#8B95A7">: </tspan><tspan fill="#E6EAF2">React, Next.js, Vite, Tailwind</tspan></text>
+<text class="mono fade" style="animation-delay:2.17s" x="393.8" y="473.5" font-size="14.5" xml:space="preserve"><tspan fill="#F5C451" font-weight="700">Backend</tspan><tspan fill="#8B95A7">: </tspan><tspan fill="#E6EAF2">Node.js, Socket.io, Supabase</tspan></text>
+<text class="mono fade" style="animation-delay:2.26s" x="393.8" y="495.0" font-size="14.5" xml:space="preserve"><tspan fill="#F5C451" font-weight="700">Data</tspan><tspan fill="#8B95A7">: </tspan><tspan fill="#E6EAF2">Postgres, SQLite / LibSQL</tspan></text>
+<text class="mono fade" style="animation-delay:2.35s" x="393.8" y="516.5" font-size="14.5" xml:space="preserve"><tspan fill="#F5C451" font-weight="700">Ship</tspan><tspan fill="#8B95A7">: </tspan><tspan fill="#E6EAF2">Vercel, Docker</tspan></text>
+<text class="mono fade" style="animation-delay:2.44s" x="393.8" y="538.0" font-size="14.5" xml:space="preserve"><tspan fill="#F5C451" font-weight="700">Web</tspan><tspan fill="#8B95A7">: </tspan><tspan fill="#E6EAF2">oliverseidl.dev</tspan></text>
+<text class="mono fade" style="animation-delay:2.53s" x="393.8" y="559.5" font-size="14.5" xml:space="preserve"><tspan fill="#F5C451" font-weight="700">Mail</tspan><tspan fill="#8B95A7">: </tspan><tspan fill="#E6EAF2">kontakt@oliverseidl.dev</tspan></text>
+<text class="mono fade" style="animation-delay:2.62s" x="393.8" y="581.0" font-size="14.5" xml:space="preserve"><tspan fill="#F5C451" font-weight="700">Offline</tspan><tspan fill="#8B95A7">: </tspan><tspan fill="#E6EAF2">karting, gym</tspan></text>
+<g class="fade" style="animation-delay:2.74s">
+<rect x="393.8" y="596.5" width="26" height="14" fill="#1F2430"/>
+<rect x="419.8" y="596.5" width="26" height="14" fill="#FF5F57"/>
+<rect x="445.8" y="596.5" width="26" height="14" fill="#28C840"/>
+<rect x="471.8" y="596.5" width="26" height="14" fill="#FEBC2E"/>
+<rect x="497.8" y="596.5" width="26" height="14" fill="#5C8DF6"/>
+<rect x="523.8" y="596.5" width="26" height="14" fill="#C678DD"/>
+<rect x="549.8" y="596.5" width="26" height="14" fill="#56B6C2"/>
+<rect x="575.8" y="596.5" width="26" height="14" fill="#E6EAF2"/>
+</g>
+<g class="fade" style="animation-delay:2.89s"><text class="mono" x="58" y="606" font-size="15" xml:space="preserve"><tspan fill="#F5C451" font-weight="700">oliver@arch</tspan><tspan fill="#7AA2F7"> ~ </tspan><tspan fill="#8B95A7">$ </tspan></text><rect class="blink" x="205.4" y="592" width="9" height="18" fill="#F5C451"/></g>
+</svg>
