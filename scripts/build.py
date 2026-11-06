@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Generate every SVG in assets/. Run: python3 scripts/build.py"""
+import re
 from html import escape
 from pathlib import Path
 
@@ -45,6 +46,7 @@ def frame(uid, H, inner, hue_a, hue_b, blobs):
 
 
 def save(name, body, width, height):
+    body = re.sub(r'<animate[^>]*/>', '', body)
     (OUT / f"{name}.svg").write_text(
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" '
         f'viewBox="0 0 {width} {height}">{body}</svg>')
@@ -76,10 +78,10 @@ def hero():
     cx, cy = 715, 190
     for rx, ry, op in ((150, 54, .16), (112, 40, .12), (74, 26, .1)):
         i += f'<ellipse cx="{cx}" cy="{cy}" rx="{rx}" ry="{ry}" fill="none" stroke="#fff" stroke-opacity="{op}" transform="rotate(-18 {cx} {cy})"/>'
-    for rx, ry, dur, col in ((150, 54, 9, "#ff4ecd"), (112, 40, 6, "#22d3ee"), (74, 26, 4, "#ffffff")):
-        path = f"M{cx-rx},{cy} a{rx},{ry} 0 1,0 {2*rx},0 a{rx},{ry} 0 1,0 {-2*rx},0"
-        i += (f'<g transform="rotate(-18 {cx} {cy})"><circle r="5" fill="{col}">'
-              f'<animateMotion dur="{dur}s" repeatCount="indefinite" path="{path}"/></circle></g>')
+    for rx, ry, ang, col in ((150, 54, 200, "#ff4ecd"), (112, 40, 300, "#22d3ee"), (74, 26, 60, "#ffffff")):
+        import math
+        dx, dy = rx * math.cos(math.radians(ang)), ry * math.sin(math.radians(ang))
+        i += (f'<g transform="rotate(-18 {cx} {cy})"><circle cx="{cx+dx:.1f}" cy="{cy+dy:.1f}" r="5" fill="{col}"/></g>')
     i += f'<circle cx="{cx}" cy="{cy}" r="16" fill="#fff" opacity=".95"/>'
     i += f'<circle cx="{cx}" cy="{cy}" r="34" fill="#fff" opacity=".08"/>'
     # status pill
