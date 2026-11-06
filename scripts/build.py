@@ -152,11 +152,11 @@ def art_tama():
     col = {"K": "#1a1205", "Y": "#ffc44d", "P": "#ff7a90"}
     px = "".join(f'<rect x="{x0+c*p}" y="{y0+r*p}" width="{p}" height="{p}" fill="{col[ch]}"/>'
                  for r, row in enumerate(PET) for c, ch in enumerate(row) if ch in col)
-    s = f'<ellipse cx="{x0+54}" cy="{y0+120}" rx="46" ry="7" fill="#000" opacity=".45"/>'
+    s = f'<ellipse cx="{x0+54}" cy="{y0+110}" rx="46" ry="6" fill="#000" opacity=".45"/>'
     s += float_g(px, 8, 1.6)
     for k, (lab, v) in enumerate((("FOOD", 4), ("JOY", 3), ("ZZZ", 5))):
         y = 60 + k * 30
-        s += text(780, y + 9, lab, 10, MUTE, 700, MONO, 1.5)
+        s += text(780, y + 9, lab, 10, INK, 700, MONO, 1.5)
         for b in range(5):
             on = b < v
             s += (f'<rect x="{820+b*12}" y="{y}" width="9" height="10" rx="1" '
@@ -186,8 +186,8 @@ def stack():
     H, u = 210, "st"
     blobs = [blob(u, 150, 200, 140, "#3178c6", 60, -20, 16, .5), blob(u, 760, 20, 140, "#f74c00", -60, 30, 18, .4)]
     i = text(56, 60, "STACK", 12, MUTE, 600, MONO, 3)
-    i += text(W - 56, 60, "daily drivers", 12, DIM, 600, MONO, 0, "end")
-    items = (("TS", "TypeScript", "#3178c6"), ("RS", "Rust", "#f74c00"), ("PY", "Python", "#ffd43b"),
+    i += text(W - 56, 60, "daily drivers", 12, MUTE, 600, MONO, 0, "end")
+    items = (("TS", "TypeScript", "#5b9dff"), ("RS", "Rust", "#f74c00"), ("PY", "Python", "#ffd43b"),
              ("N", "Next.js", "#ffffff"), ("$_", "Shell", "#4eaa25"))
     tw, gap = 148, 15
     for k, (ab, lab, c) in enumerate(items):
@@ -196,7 +196,7 @@ def stack():
         i += (f'<circle cx="{x+34}" cy="132" r="20" fill="{c}" opacity=".18"/>'
               f'<circle cx="{x+34}" cy="132" r="20" fill="none" stroke="{c}" stroke-opacity=".7"/>')
         i += text(x + 34, 137, ab, 13, c, 800, MONO, 0, "middle")
-        i += text(x + 62, 137, lab, 14, INK, 700)
+        i += text(x + 62, 137, lab, 14, INK, 700) if len(lab) < 10 else text(x + 60, 137, lab, 13.5, INK, 700)
     save("stack", frame(u, H, i, "#3178c6", "#ffffff", blobs), W, H)
 
 
