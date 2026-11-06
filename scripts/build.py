@@ -62,6 +62,30 @@ def glass(x, y, w, h, r=14, op=.06):
             f'stroke="#fff" stroke-opacity=".12"/>')
 
 
+SRC = Path(__file__).resolve().parent / "src"
+
+
+def logo(name, x, y, size, color):
+    """Official brand mark from simple-icons (24x24 viewBox)."""
+    d = re.search(r' d="([^"]+)"', (SRC / f"{name}.svg").read_text()).group(1)
+    return f'<path transform="translate({x} {y}) scale({size/24})" d="{d}" fill="{color}"/>'
+
+
+def sprite(name, x, y, px):
+    """Real tama sprite, one rect per pixel."""
+    import subprocess
+    txt = subprocess.run(["magick", str(SRC / f"{name}.png"), "txt:-"],
+                         capture_output=True, text=True, check=True).stdout
+    out = []
+    for m in re.finditer(r"^(\d+),(\d+): \(([\d.]+),([\d.]+),([\d.]+),([\d.]+)\)", txt, re.M):
+        cx, cy, r, g, b, a = m.groups()
+        if float(a) < 128:
+            continue
+        out.append(f'<rect x="{x+int(cx)*px}" y="{y+int(cy)*px}" width="{px}" height="{px}" '
+                   f'fill="#{int(float(r)):02x}{int(float(g)):02x}{int(float(b)):02x}"/>')
+    return "".join(out)
+
+
 # ---------------------------------------------------------------- hero
 def hero():
     H, u = 380, "h"
@@ -96,13 +120,22 @@ def hero():
 
 
 # ---------------------------------------------------------------- projects
+TAG_LOGO = {"TypeScript": "typescript", "Rust": "rust", "Next.js": "nextdotjs",
+            "Socket.io": "socketdotio", "MCP": "mcp"}
+
+
 def tags(x, y, items, col):
     s = ""
     for t in items:
-        w = int(len(t) * 7.6) + 24
+        ic = TAG_LOGO.get(t)
+        w = int(len(t) * 7.6) + 24 + (20 if ic else 0)
         s += (f'<rect x="{x}" y="{y}" width="{w}" height="26" rx="13" fill="{col}" fill-opacity=".14" '
               f'stroke="{col}" stroke-opacity=".45"/>')
-        s += text(x + 12, y + 17, t, 12, INK, 600, MONO)
+        tx = x + 12
+        if ic:
+            s += logo(ic, x + 11, y + 6, 14, INK)
+            tx += 20
+        s += text(tx, y + 17, t, 12, INK, 600, MONO)
         x += w + 8
     return s
 
@@ -142,25 +175,17 @@ def art_crm():
     return s
 
 
-PET = ["....KKKK....", "..KKYYYYKK..", ".KYYYYYYYYK.", "KYYKYYYYKYYK", "KYYKYYYYKYYK",
-       "KYYYYYYYYYYK", "KYPYYYYYYPYK", "KYYYYKKYYYYK", ".KYYYYYYYYK.", "..KKYYYYKK..",
-       "..K.K..K.K.."]
-
-
 def art_tama():
-    p, x0, y0 = 9, 640, 52
-    col = {"K": "#1a1205", "Y": "#ffc44d", "P": "#ff7a90"}
-    px = "".join(f'<rect x="{x0+c*p}" y="{y0+r*p}" width="{p}" height="{p}" fill="{col[ch]}"/>'
-                 for r, row in enumerate(PET) for c, ch in enumerate(row) if ch in col)
-    s = f'<ellipse cx="{x0+54}" cy="{y0+110}" rx="46" ry="6" fill="#000" opacity=".45"/>'
-    s += float_g(px, 8, 1.6)
-    for k, (lab, v) in enumerate((("FOOD", 4), ("JOY", 3), ("ZZZ", 5))):
-        y = 60 + k * 30
+    p, x0, y0 = 3, 610, 40
+    s = f'<ellipse cx="{x0+72}" cy="{y0+140}" rx="50" ry="7" fill="#000" opacity=".45"/>'
+    s += sprite("mametchi", x0, y0, p)
+    for k, (lab, v) in enumerate((("FOOD", 4), ("JOY", 5), ("ZZZ", 3))):
+        y = 70 + k * 30
         s += text(780, y + 9, lab, 10, INK, 700, MONO, 1.5)
         for b in range(5):
             on = b < v
             s += (f'<rect x="{820+b*12}" y="{y}" width="9" height="10" rx="1" '
-                  f'fill="{"#ffc44d" if on else "#ffffff"}" opacity="{1 if on else .12}"/>')
+                  f'fill="{"#5cb85c" if on else "#ffffff"}" opacity="{1 if on else .14}"/>')
     return s
 
 
@@ -187,16 +212,15 @@ def stack():
     blobs = [blob(u, 150, 200, 140, "#3178c6", 60, -20, 16, .5), blob(u, 760, 20, 140, "#f74c00", -60, 30, 18, .4)]
     i = text(56, 60, "STACK", 12, MUTE, 600, MONO, 3)
     i += text(W - 56, 60, "daily drivers", 12, MUTE, 600, MONO, 0, "end")
-    items = (("TS", "TypeScript", "#5b9dff"), ("RS", "Rust", "#f74c00"), ("PY", "Python", "#ffd43b"),
-             ("N", "Next.js", "#ffffff"), ("$_", "Shell", "#4eaa25"))
+    items = (("typescript", "TypeScript", "#3178c6"), ("rust", "Rust", "#f74c00"),
+             ("python", "Python", "#ffd43b"), ("nextdotjs", "Next.js", "#ffffff"), ("gnubash", "Shell", "#4eaa25"))
     tw, gap = 148, 15
-    for k, (ab, lab, c) in enumerate(items):
+    for k, (ic, lab, c) in enumerate(items):
         x = 56 + k * (tw + gap)
         i += glass(x, 86, tw, 92, 16, .05)
-        i += (f'<circle cx="{x+34}" cy="132" r="20" fill="{c}" opacity=".18"/>'
-              f'<circle cx="{x+34}" cy="132" r="20" fill="none" stroke="{c}" stroke-opacity=".7"/>')
-        i += text(x + 34, 137, ab, 13, c, 800, MONO, 0, "middle")
-        i += text(x + 62, 137, lab, 14, INK, 700) if len(lab) < 10 else text(x + 60, 137, lab, 13.5, INK, 700)
+        i += f'<circle cx="{x+34}" cy="132" r="20" fill="{c}" opacity=".16"/>'
+        i += logo(ic, x + 23, 121, 22, "#ffffff" if ic in ("nextdotjs", "rust") else c)
+        i += text(x + 62, 137, lab, 14, INK, 700)
     save("stack", frame(u, H, i, "#3178c6", "#ffffff", blobs), W, H)
 
 
@@ -213,13 +237,13 @@ def contact():
     save("contact", frame(u, H, i, "#7c5cff", "#ffd1f3", blobs), W, H)
 
 
-def button(key, glyph, label, col):
+def button(key, glyph, label, col, ic=None):
     bw, h = 210, 48
     b = (f'<defs><linearGradient id="k" x1="0" x2="1"><stop offset="0" stop-color="{col}" stop-opacity=".28"/>'
          f'<stop offset="1" stop-color="{col}" stop-opacity=".06"/></linearGradient></defs>')
     b += f'<rect x=".5" y=".5" width="{bw-1}" height="{h-1}" rx="24" fill="{BG}"/>'
     b += f'<rect x=".5" y=".5" width="{bw-1}" height="{h-1}" rx="24" fill="url(#k)" stroke="{col}" stroke-opacity=".5"/>'
-    b += text(30, 30, glyph, 15, col, 800, MONO, 0, "middle")
+    b += logo(ic, 21, 15, 18, col) if ic else text(30, 30, glyph, 15, col, 800, MONO, 0, "middle")
     b += text(50, 29, label, 13, INK, 600, MONO)
     save(f"btn-{key}", b, bw, h)
 
@@ -234,16 +258,16 @@ def main():
             ["TypeScript", "MCP", "local-first"], "#7c5cff", "#22d3ee", art_crm())
     project("tamagotchi", "02", "tama",
             ["A pixel-art pet that lives in a window,", "in your status bar and in your shell."],
-            ["Rust", "pixel art", "CLI"], "#ffb020", "#ff4ecd", art_tama())
+            ["Rust", "pixel art", "CLI"], "#5cb85c", "#f5d061", art_tama())
     project("slophoot", "03", "slophoot",
             ["Self-hosted Kahoot-style quiz. Host opens a", "room, players join live with a PIN."],
             ["TypeScript", "Next.js", "Socket.io"], "#ff4ecd", "#1368ce", art_slop())
     stack()
     contact()
     button("web", "↗", "oliverseidl.dev", "#22d3ee")
-    button("in", "in", "LinkedIn", "#3b82f6")
-    button("ig-dev", "◎", "@oliverseidl.dev", "#ff4ecd")
-    button("ig-me", "◎", "@olinkkt", "#ffb020")
+    button("in", "", "LinkedIn", "#3b82f6", "linkedin")
+    button("ig-dev", "", "@oliverseidl.dev", "#ff4ecd", "instagram")
+    button("ig-me", "", "@olinkkt", "#ffb020", "instagram")
     print("done:", len(list(OUT.glob("*.svg"))), "svgs")
 
 
