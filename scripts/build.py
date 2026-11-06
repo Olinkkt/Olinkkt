@@ -97,7 +97,7 @@ def hero():
           f'letter-spacing="-5" fill="url(#t{u})">Oliver</text>')
     i += (f'<text x="52" y="290" font-family="{SANS}" font-size="104" font-weight="800" '
           f'letter-spacing="-5" fill="url(#t{u})">Seidl<tspan fill="#ff4ecd">.</tspan></text>')
-    i += text(56, 332, "I build keyboard-first tools and web apps with TypeScript and Rust.", 17, MUTE)
+    i += text(56, 332, "I build web app tools, realtime websocket apps and games in Rust.", 17, MUTE)
     # orbit
     cx, cy = 715, 190
     for rx, ry, op in ((150, 54, .16), (112, 40, .12), (74, 26, .1)):
@@ -132,10 +132,10 @@ def tags(x, y, items, col):
     return s
 
 
-def project(name, idx, title, lines, tg, hue_a, hue_b, art):
+def project(name, idx, title, lines, tg, hue_a, hue_b, art, kind="PROJECT"):
     H, u = 290, name[:2]
     blobs = [blob(u, 760, 60, 150, hue_a, -50, 40, 15), blob(u, 600, 240, 110, hue_b, 60, -20, 18, .5)]
-    i = text(56, 64, f"{idx}  /  PROJECT", 12, MUTE, 600, MONO, 3)
+    i = text(56, 64, f"{idx}  /  {kind}", 12, MUTE, 600, MONO, 3)
     i += text(52, 116, title, 46, INK, 800, SANS, -2)
     for n, ln in enumerate(lines):
         i += text(56, 150 + n * 22, ln, 15, MUTE)
@@ -249,13 +249,13 @@ def main():
     hero()
     project("freelancer-crm", "01", "freelancer-crm",
             ["Keyboard-first, local-first CRM for solo", "freelancers, with a REST API and MCP for agents."],
-            ["TypeScript", "MCP", "local-first"], "#7c5cff", "#22d3ee", art_crm())
+            ["TypeScript", "MCP", "local-first"], "#7c5cff", "#22d3ee", art_crm(), "WEB APP  ·  TOOL")
     project("tamagotchi", "02", "tama",
             ["A pixel-art pet that lives in a window,", "in your status bar and in your shell."],
-            ["Rust", "pixel art", "CLI"], "#5cb85c", "#f5d061", art_tama())
+            ["Rust", "game", "pixel art"], "#5cb85c", "#f5d061", art_tama(), "GAME  ·  RUST")
     project("slophoot", "03", "slophoot",
             ["Self-hosted Kahoot-style quiz. Host opens a", "room, players join live with a PIN."],
-            ["TypeScript", "Next.js", "Socket.io"], "#ff4ecd", "#1368ce", art_slop())
+            ["TypeScript", "Next.js", "Socket.io", "websockets"], "#ff4ecd", "#1368ce", art_slop(), "REALTIME  ·  WEBSOCKETS")
     stack()
     contact()
     button("web", "↗", "oliverseidl.dev", "#22d3ee", None, 0, 6)
