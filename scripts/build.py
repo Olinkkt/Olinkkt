@@ -116,7 +116,8 @@ def hero():
           f'<circle cx="{px+20}" cy="{py+18}" r="5" fill="none" stroke="#3ddc84" stroke-width="2">'
           f'<animate attributeName="r" values="5;12" dur="1.8s" repeatCount="indefinite"/>'
           f'<animate attributeName="opacity" values=".9;0" dur="1.8s" repeatCount="indefinite"/></circle>')
-    i += text(px + 38, py + 23, "Open for freelance work", 13, INK, 600, MONO)
+    i += (f'<text x="{px+38}" y="{py+23}" font-family="{MONO}" font-size="13" font-weight="600" fill="{INK}" '
+          f'textLength="{pw-60}" lengthAdjust="spacingAndGlyphs">Open for freelance work</text>')
     save("hero", frame(u, H, i, "#7c5cff", "#d9ccff", blobs), W, H)
 
 
@@ -160,7 +161,7 @@ def float_g(inner, dy=6, dur=4):
 
 
 def art_crm():
-    x0, y0, s = 552, 92, ""
+    x0, y0, s = 552, 70, ""
     cols = (("Lead", 3), ("Active", 2), ("Paid", 2))
     for c, (lab, n) in enumerate(cols):
         x = x0 + c * 104
@@ -171,8 +172,6 @@ def art_crm():
             card += f'<rect x="{x+16}" y="{y0+44+k*36}" width="{30+k*9}" height="4" rx="2" fill="#fff" opacity=".7"/>'
             card += f'<rect x="{x+16}" y="{y0+52+k*36}" width="22" height="3" rx="1.5" fill="#a78bfa"/>'
             s += float_g(card, 3, 3 + c + k * .7) if (c, k) == (1, 0) else card
-    s += glass(x0 + 148 - 37, y0 - 52, 74, 26, 13, .12)
-    s += text(x0 + 148, y0 - 35, "⌘ K", 11, INK, 700, MONO, 0, "middle")
     return s
 
 
@@ -191,7 +190,7 @@ def art_tama():
 
 
 def art_slop():
-    x0, y0, s = 566, 48, ""
+    x0, y0, s = 566, 80, ""
     tiles = (("#e21b3c", "tri"), ("#1368ce", "dia"), ("#d89e00", "cir"), ("#26890c", "sq"))
     for k, (c, shp) in enumerate(tiles):
         x, y = x0 + (k % 2) * 146, y0 + (k // 2) * 72
@@ -202,8 +201,6 @@ def art_slop():
               "cir": f'<circle cx="{cx}" cy="{cy}" r="10" fill="#fff"/>',
               "sq": f'<rect x="{cx-9}" y="{cy-9}" width="18" height="18" fill="#fff"/>'}[shp]
         s += f'<rect x="{x+50}" y="{y+26}" width="{48-k*6}" height="6" rx="3" fill="#fff" opacity=".85"/>'
-    s += glass(x0 + 139 - 75, y0 + 166, 150, 36, 18, .1)
-    s += text(x0 + 139, y0 + 189, "PIN  482 913", 14, INK, 700, MONO, 2, "middle")
     return s
 
 
