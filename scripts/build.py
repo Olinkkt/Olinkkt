@@ -108,16 +108,6 @@ def hero():
         i += (f'<g transform="rotate(-18 {cx} {cy})"><circle cx="{cx+dx:.1f}" cy="{cy+dy:.1f}" r="5" fill="{col}"/></g>')
     i += f'<circle cx="{cx}" cy="{cy}" r="16" fill="#fff" opacity=".95"/>'
     i += f'<circle cx="{cx}" cy="{cy}" r="34" fill="#fff" opacity=".08"/>'
-    # status pill
-    pw = int(len("Open for freelance work") * 7.8) + 56
-    px, py = W - 56 - pw, 312
-    i += glass(px, py, pw, 36, 18, .08)
-    i += (f'<circle cx="{px+20}" cy="{py+18}" r="5" fill="#3ddc84"/>'
-          f'<circle cx="{px+20}" cy="{py+18}" r="5" fill="none" stroke="#3ddc84" stroke-width="2">'
-          f'<animate attributeName="r" values="5;12" dur="1.8s" repeatCount="indefinite"/>'
-          f'<animate attributeName="opacity" values=".9;0" dur="1.8s" repeatCount="indefinite"/></circle>')
-    i += (f'<text x="{px+38}" y="{py+23}" font-family="{MONO}" font-size="13" font-weight="600" fill="{INK}" '
-          f'textLength="{pw-60}" lengthAdjust="spacingAndGlyphs">Open for freelance work</text>')
     save("hero", frame(u, H, i, "#7c5cff", "#d9ccff", blobs), W, H)
 
 
