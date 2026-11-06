@@ -202,13 +202,13 @@ def stack():
     i += text(W - 56, 60, "daily drivers", 12, MUTE, 600, MONO, 0, "end")
     items = (("typescript", "TypeScript", "#3178c6"), ("rust", "Rust", "#f74c00"),
              ("python", "Python", "#ffd43b"), ("nextdotjs", "Next.js", "#ffffff"), ("gnubash", "Shell", "#4eaa25"))
-    tw, gap = 148, 15
+    tw, gap = 148, 12
     for k, (ic, lab, c) in enumerate(items):
         x = 56 + k * (tw + gap)
-        i += glass(x, 86, tw, 92, 16, .05)
-        i += f'<circle cx="{x+34}" cy="132" r="20" fill="{c}" opacity=".16"/>'
-        i += logo(ic, x + 23, 121, 22, "#ffffff" if ic in ("nextdotjs", "rust") else c)
-        i += text(x + 62, 137, lab, 14, INK, 700)
+        i += glass(x, 84, tw, 100, 16, .05)
+        col = "#ffffff" if ic in ("nextdotjs", "rust") else ("#5b9dff" if ic == "typescript" else c)
+        i += logo(ic, x + tw / 2 - 19, 100, 38, col)
+        i += text(x + tw / 2, 165, lab, 14, INK, 700, SANS, 0, "middle")
     save("stack", frame(u, H, i, "#3178c6", "#ffffff", blobs), W, H)
 
 
@@ -225,14 +225,20 @@ def contact():
     save("contact", frame(u, H, i, "#7c5cff", "#ffd1f3", blobs), W, H)
 
 
-def button(key, glyph, label, col, ic=None):
-    bw, h = 210, 48
+def button(key, glyph, label, col, ic, lpad, rpad):
+    bw, h = 225, 48
+    rw = bw - lpad - rpad
     b = (f'<defs><linearGradient id="k" x1="0" x2="1"><stop offset="0" stop-color="{col}" stop-opacity=".28"/>'
          f'<stop offset="1" stop-color="{col}" stop-opacity=".06"/></linearGradient></defs>')
-    b += f'<rect x=".5" y=".5" width="{bw-1}" height="{h-1}" rx="24" fill="{BG}"/>'
-    b += f'<rect x=".5" y=".5" width="{bw-1}" height="{h-1}" rx="24" fill="url(#k)" stroke="{col}" stroke-opacity=".5"/>'
-    b += logo(ic, 21, 15, 18, col) if ic else text(30, 30, glyph, 15, col, 800, MONO, 0, "middle")
-    b += text(50, 29, label, 13, INK, 600, MONO)
+    b += f'<rect x="{lpad+.5}" y=".5" width="{rw-1}" height="{h-1}" rx="24" fill="{BG}"/>'
+    b += f'<rect x="{lpad+.5}" y=".5" width="{rw-1}" height="{h-1}" rx="24" fill="url(#k)" stroke="{col}" stroke-opacity=".5"/>'
+    tw = int(len(label) * 7.8) + (26 if ic else 22)
+    x0 = lpad + (rw - tw) / 2
+    if ic:
+        b += logo(ic, x0, 15, 18, col)
+    else:
+        b += text(x0 + 9, 30, glyph, 15, col, 800, MONO, 0, "middle")
+    b += text(x0 + 26, 29, label, 13, INK, 600, MONO)
     save(f"btn-{key}", b, bw, h)
 
 
@@ -252,10 +258,10 @@ def main():
             ["TypeScript", "Next.js", "Socket.io"], "#ff4ecd", "#1368ce", art_slop())
     stack()
     contact()
-    button("web", "↗", "oliverseidl.dev", "#22d3ee")
-    button("in", "", "LinkedIn", "#3b82f6", "linkedin")
-    button("ig-dev", "", "@oliverseidl.dev", "#ff4ecd", "instagram")
-    button("ig-me", "", "@olinkkt", "#ffb020", "instagram")
+    button("web", "↗", "oliverseidl.dev", "#22d3ee", None, 0, 6)
+    button("in", "", "LinkedIn", "#3b82f6", "linkedin", 6, 6)
+    button("ig-dev", "", "@oliverseidl.dev", "#ff4ecd", "instagram", 6, 6)
+    button("ig-me", "", "@olinkkt", "#ffb020", "instagram", 6, 0)
     print("done:", len(list(OUT.glob("*.svg"))), "svgs")
 
 
