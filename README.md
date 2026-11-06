@@ -1,19 +1,18 @@
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/hero-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="assets/hero-light.svg">
-  <img src="assets/hero-light.svg" alt="Oliver Seidl, Student and Software Engineer in Prague. Open for freelance work." width="100%">
-</picture>
+<p align="center"><img src="assets/hero.svg" width="100%" alt="Oliver Seidl, Student and Software Engineer in Prague. Open for freelance work."></p>
 
-### Projects
+<p align="center"><a href="https://github.com/Olinkkt/freelancer-crm"><img src="assets/project-freelancer-crm.svg" width="100%" alt="freelancer-crm: keyboard-first, local-first CRM for solo freelancers"></a></p>
 
-- **[freelancer-crm](https://github.com/Olinkkt/freelancer-crm)**: keyboard-first, local-first CRM for solo freelancers, with a REST API and MCP for AI agents. `TypeScript`
-- **[tamagotchi](https://github.com/Olinkkt/tamagotchi)**: a pixel-art pet that lives in a window, your status bar and your shell. `Rust`
-- **[slophoot](https://github.com/Olinkkt/slophoot)**: self-hosted Kahoot-style quiz with live rooms and PIN join. `TypeScript`
+<p align="center"><a href="https://github.com/Olinkkt/tamagotchi"><img src="assets/project-tamagotchi.svg" width="100%" alt="tama: a pixel-art tamagotchi written in Rust"></a></p>
 
-### Stack
+<p align="center"><a href="https://github.com/Olinkkt/slophoot"><img src="assets/project-slophoot.svg" width="100%" alt="slophoot: self-hosted Kahoot-style quiz"></a></p>
 
-`TypeScript` `Rust` `Python` `Next.js` `Shell`
+<p align="center"><img src="assets/stack.svg" width="100%" alt="Stack: TypeScript, Rust, Python, Next.js, Shell"></p>
 
-### Contact
+<p align="center"><a href="mailto:kontakt@oliverseidl.dev"><img src="assets/contact.svg" width="100%" alt="Email kontakt@oliverseidl.dev"></a></p>
 
-[kontakt@oliverseidl.dev](mailto:kontakt@oliverseidl.dev) · [oliverseidl.dev](https://oliverseidl.dev) · [LinkedIn](https://linkedin.com/in/oliverseidl95) · Instagram [@oliverseidl.dev](https://instagram.com/oliverseidl.dev) (dev) and [@olinkkt](https://instagram.com/olinkkt) (personal)
+<p align="center">
+  <a href="https://oliverseidl.dev"><img src="assets/btn-web.svg" alt="Website" height="44"></a>
+  <a href="https://linkedin.com/in/oliverseidl95"><img src="assets/btn-in.svg" alt="LinkedIn" height="44"></a>
+  <a href="https://instagram.com/oliverseidl.dev"><img src="assets/btn-ig-dev.svg" alt="Instagram (dev)" height="44"></a>
+  <a href="https://instagram.com/olinkkt"><img src="assets/btn-ig-me.svg" alt="Instagram (personal)" height="44"></a>
+</p>
