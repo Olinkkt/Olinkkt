@@ -212,6 +212,23 @@ def stack():
     save("stack", frame(u, H, i, "#3178c6", "#ffffff", blobs), W, H)
 
 
+def skills():
+    H, u = 210, "sk"
+    blobs = [blob(u, 140, 200, 140, "#ff4ecd", 60, -20, 16, .4), blob(u, 760, 20, 140, "#22d3ee", -60, 30, 18, .4)]
+    i = text(56, 60, "SKILLS", 12, MUTE, 600, MONO, 3)
+    i += text(W - 56, 60, "what I ship", 12, MUTE, 600, MONO, 0, "end")
+    items = (("E-commerce", "eshop, checkout", "#ffb020"), ("Games", "Rust", "#5cb85c"),
+             ("Web apps", "tools, TypeScript", "#7c5cff"), ("Realtime", "websockets", "#ff4ecd"))
+    tw, gap = 200, 12
+    for k, (lab, sub, c) in enumerate(items):
+        x = 56 + k * (tw + gap)
+        i += glass(x, 84, tw, 100, 16, .05)
+        i += f'<rect x="{x+20}" y="104" width="28" height="4" rx="2" fill="{c}"/>'
+        i += text(x + 20, 142, lab, 20, INK, 800, SANS, -.5)
+        i += text(x + 20, 166, sub, 12, MUTE, 600, MONO)
+    save("skills", frame(u, H, i, "#ff4ecd", "#ffffff", blobs), W, H)
+
+
 # ---------------------------------------------------------------- contact
 def contact():
     H, u = 230, "ct"
@@ -257,6 +274,7 @@ def main():
             ["Self-hosted Kahoot-style quiz. Host opens a", "room, players join live with a PIN."],
             ["TypeScript", "Next.js", "Socket.io"], "#ff4ecd", "#1368ce", art_slop())
     stack()
+    skills()
     contact()
     button("web", "↗", "oliverseidl.dev", "#22d3ee", None, 0, 6)
     button("in", "", "LinkedIn", "#3b82f6", "linkedin", 6, 6)
