@@ -207,7 +207,7 @@ def contact():
              blob(u, 120, 0, 120, "#ff4ecd", 40, 30, 18, .45), blob(u, 820, 40, 120, "#22d3ee", -40, 30, 17, .4)]
     i = text(W / 2, 64, "CONTACT", 12, MUTE, 600, MONO, 3, "middle")
     i += (f'<text x="{W/2}" y="128" text-anchor="middle" font-family="{SANS}" font-size="52" '
-          f'font-weight="800" letter-spacing="-2" fill="url(#t{u})">Let\'s build something.</text>')
+          f'font-weight="800" letter-spacing="-2" fill="url(#t{u})">Got a project? Write me.</text>')
     i += text(W / 2, 176, "kontakt@oliverseidl.dev", 18, INK, 600, MONO, 0, "middle")
     i += text(W / 2, 202, "click to send an email", 12, MUTE, 600, MONO, 0, "middle")
     save("contact", frame(u, H, i, "#7c5cff", "#ffd1f3", blobs), W, H)
@@ -230,7 +230,7 @@ def main():
         f.unlink()
     hero()
     project("freelancer-crm", "01", "freelancer-crm",
-            ["Keyboard-first, local-first CRM and project", "tracker for solo freelancers. REST API + MCP."],
+            ["Keyboard-first, local-first CRM for solo", "freelancers, with a REST API and MCP for agents."],
             ["TypeScript", "MCP", "local-first"], "#7c5cff", "#22d3ee", art_crm())
     project("tamagotchi", "02", "tama",
             ["A pixel-art pet that lives in a window,", "in your status bar and in your shell."],
