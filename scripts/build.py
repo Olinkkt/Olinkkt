@@ -109,13 +109,14 @@ def hero():
     i += f'<circle cx="{cx}" cy="{cy}" r="16" fill="#fff" opacity=".95"/>'
     i += f'<circle cx="{cx}" cy="{cy}" r="34" fill="#fff" opacity=".08"/>'
     # status pill
-    px, py = 640, 316
-    i += glass(px, py, 214, 36, 18, .08)
+    pw = int(len("Open for freelance work") * 7.8) + 56
+    px, py = W - 56 - pw, 312
+    i += glass(px, py, pw, 36, 18, .08)
     i += (f'<circle cx="{px+20}" cy="{py+18}" r="5" fill="#3ddc84"/>'
           f'<circle cx="{px+20}" cy="{py+18}" r="5" fill="none" stroke="#3ddc84" stroke-width="2">'
           f'<animate attributeName="r" values="5;12" dur="1.8s" repeatCount="indefinite"/>'
           f'<animate attributeName="opacity" values=".9;0" dur="1.8s" repeatCount="indefinite"/></circle>')
-    i += text(px + 36, py + 23, "Open for freelance work", 13, INK, 600, MONO)
+    i += text(px + 38, py + 23, "Open for freelance work", 13, INK, 600, MONO)
     save("hero", frame(u, H, i, "#7c5cff", "#d9ccff", blobs), W, H)
 
 
@@ -141,7 +142,7 @@ def tags(x, y, items, col):
 
 
 def project(name, idx, title, lines, tg, hue_a, hue_b, art):
-    H, u = 250, name[:2]
+    H, u = 290, name[:2]
     blobs = [blob(u, 760, 60, 150, hue_a, -50, 40, 15), blob(u, 600, 240, 110, hue_b, 60, -20, 18, .5)]
     i = text(56, 64, f"{idx}  /  PROJECT", 12, MUTE, 600, MONO, 3)
     i += text(52, 116, title, 46, INK, 800, SANS, -2)
@@ -149,7 +150,7 @@ def project(name, idx, title, lines, tg, hue_a, hue_b, art):
         i += text(56, 150 + n * 22, ln, 15, MUTE)
     i += tags(56, 196, tg, hue_a)
     i += art
-    i += text(W - 48, 224, f"github.com/Olinkkt/{name}  →", 12, INK, 600, MONO, 0, "end", .75)
+    i += text(56, 246, f"github.com/Olinkkt/{name}  →", 12, INK, 600, MONO, 0, "start", .75)
     save(f"project-{name}", frame(u, H, i, hue_a, hue_b, blobs), W, H)
 
 
@@ -159,10 +160,10 @@ def float_g(inner, dy=6, dur=4):
 
 
 def art_crm():
-    x0, y0, s = 560, 44, ""
+    x0, y0, s = 552, 92, ""
     cols = (("Lead", 3), ("Active", 2), ("Paid", 2))
     for c, (lab, n) in enumerate(cols):
-        x = x0 + c * 98
+        x = x0 + c * 104
         s += glass(x, y0, 88, 150, 12, .05)
         s += text(x + 12, y0 + 22, lab.upper(), 10, MUTE, 700, MONO, 1.5)
         for k in range(n):
@@ -170,39 +171,39 @@ def art_crm():
             card += f'<rect x="{x+16}" y="{y0+44+k*36}" width="{30+k*9}" height="4" rx="2" fill="#fff" opacity=".7"/>'
             card += f'<rect x="{x+16}" y="{y0+52+k*36}" width="22" height="3" rx="1.5" fill="#a78bfa"/>'
             s += float_g(card, 3, 3 + c + k * .7) if (c, k) == (1, 0) else card
-    s += glass(x0 + 196 - 60, y0 - 32, 74, 24, 12, .12)
-    s += text(x0 + 196 - 23, y0 - 16, "⌘ K", 11, INK, 700, MONO, 0, "middle")
+    s += glass(x0 + 148 - 37, y0 - 52, 74, 26, 13, .12)
+    s += text(x0 + 148, y0 - 35, "⌘ K", 11, INK, 700, MONO, 0, "middle")
     return s
 
 
 def art_tama():
-    p, x0, y0 = 3, 610, 40
-    s = f'<ellipse cx="{x0+72}" cy="{y0+140}" rx="50" ry="7" fill="#000" opacity=".45"/>'
+    p, x0, y0 = 3, 586, 58
+    s = f'<ellipse cx="{x0+72}" cy="{y0+146}" rx="50" ry="7" fill="#000" opacity=".45"/>'
     s += sprite("mametchi", x0, y0, p)
     for k, (lab, v) in enumerate((("FOOD", 4), ("JOY", 5), ("ZZZ", 3))):
-        y = 70 + k * 30
-        s += text(780, y + 9, lab, 10, INK, 700, MONO, 1.5)
+        y = 108 + k * 30
+        s += text(758, y + 9, lab, 10, INK, 700, MONO, 1.5)
         for b in range(5):
             on = b < v
-            s += (f'<rect x="{820+b*12}" y="{y}" width="9" height="10" rx="1" '
+            s += (f'<rect x="{800+b*12}" y="{y}" width="9" height="10" rx="1" '
                   f'fill="{"#5cb85c" if on else "#ffffff"}" opacity="{1 if on else .14}"/>')
     return s
 
 
 def art_slop():
-    x0, y0, s = 600, 40, ""
+    x0, y0, s = 566, 48, ""
     tiles = (("#e21b3c", "tri"), ("#1368ce", "dia"), ("#d89e00", "cir"), ("#26890c", "sq"))
     for k, (c, shp) in enumerate(tiles):
-        x, y = x0 + (k % 2) * 124, y0 + (k // 2) * 62
-        s += f'<rect x="{x}" y="{y}" width="116" height="54" rx="10" fill="{c}"/>'
-        cx, cy = x + 26, y + 27
+        x, y = x0 + (k % 2) * 146, y0 + (k // 2) * 72
+        s += f'<rect x="{x}" y="{y}" width="132" height="58" rx="12" fill="{c}"/>'
+        cx, cy = x + 28, y + 29
         s += {"tri": f'<path d="M{cx},{cy-10} l11,19 h-22z" fill="#fff"/>',
               "dia": f'<path d="M{cx},{cy-11} l11,11 -11,11 -11,-11z" fill="#fff"/>',
               "cir": f'<circle cx="{cx}" cy="{cy}" r="10" fill="#fff"/>',
               "sq": f'<rect x="{cx-9}" y="{cy-9}" width="18" height="18" fill="#fff"/>'}[shp]
-        s += f'<rect x="{x+46}" y="{y+24}" width="{48-k*6}" height="6" rx="3" fill="#fff" opacity=".85"/>'
-    s += glass(x0 + 50, y0 + 130, 140, 34, 17, .1)
-    s += text(x0 + 120, y0 + 152, "PIN  482 913", 14, INK, 700, MONO, 2, "middle")
+        s += f'<rect x="{x+50}" y="{y+26}" width="{48-k*6}" height="6" rx="3" fill="#fff" opacity=".85"/>'
+    s += glass(x0 + 139 - 75, y0 + 166, 150, 36, 18, .1)
+    s += text(x0 + 139, y0 + 189, "PIN  482 913", 14, INK, 700, MONO, 2, "middle")
     return s
 
 
